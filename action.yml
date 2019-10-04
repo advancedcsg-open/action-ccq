@@ -1,0 +1,8 @@
+name: 'SonarQube Scan'
+description: 'Scan your code with SonarCloud to detect bugs, vulnerabilities and code smells.'
+branding:
+  icon: 'check'
+  color: 'green'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
