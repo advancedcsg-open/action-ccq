@@ -7,6 +7,11 @@ if [[ -z "${SONAR_TOKEN}" ]]; then
   exit 1
 fi
 
+if [[ -z "${SONARQUBE_URL}" ]]; then
+  echo "Set the SONARQUBE_URL env variable."
+  exit 1
+fi
+
 if [[ -f "pom.xml" ]]; then
   echo "Maven project detected. You should run the goal 'org.sonarsource.scanner.maven:sonar' during build rather than using this GitHub Action."
   exit 1
@@ -23,10 +28,6 @@ if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
 	  echo "No need to run analysis. It is already triggered by the push event."
 	  exit 78
   fi
-fi
-
-if [[ -z "${SONARQUBE_URL}" ]]; then
-  SONARQUBE_URL="https://ccq.svc.oneadvanced.com"
 fi
 
 sonar-scanner -Dsonar.host.url=${SONARQUBE_URL}
