@@ -36,7 +36,7 @@ jobs:
 
 ### Secrets
 
-- `SONAR_TOKEN` – **Required** this is the token used to authenticate access to SonarCloud. You can generate a token on your [Security page in SonarCloud](https://sonarcloud.io/account/security/). You can set the `SONAR_TOKEN` environment variable in the "Secrets" settings page of your repository.
+- `SONAR_TOKEN` – **Required** this is the token used to authenticate access to SonarCloud. You can set the `SONAR_TOKEN` environment variable in the "Secrets" settings page of your repository.
 
 ## Do not use this GitHub action if you are in the following situations
 
