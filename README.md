@@ -22,13 +22,13 @@ The workflow, usually declared in `.github/workflows/build.yml`, looks like:
 on: push
 name: Main Workflow
 jobs:
-  sonarCloudTrigger:
-    name: SonarCloud Trigger
+  sonarQubeTrigger:
+    name: SonarQube Trigger
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
+    - name: SonarQube Scan
+      uses: advancedcsg-open/action-ccq@master
       env:
         SONARQUBE_URL: 'https://mysonar.url'
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
