@@ -30,4 +30,8 @@ if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
   fi
 fi
 
-sonar-scanner -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONAR_TOKEN} $*
+if [[ -z "${VERSION}" ]]; then
+  sonar-scanner -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.projectVersion=${VERSION} $*
+else
+  sonar-scanner -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONAR_TOKEN} $*
+fi
