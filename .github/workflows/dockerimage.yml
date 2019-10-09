@@ -14,4 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag advancedcsg/action-ccq:$(date +%s)
+    - name: Publish
+      if: success()
+      uses: manusa/actions-publish-docker@master
+      with:
+        name: advancedcsg/action-ccq
+        username: ${{ secrets.DOCKER_HUB_USER }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
