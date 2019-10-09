@@ -1,7 +1,7 @@
 name: 'SonarQube Scan'
 description: 'Scan your code with SonarQube to detect bugs, vulnerabilities and code smells.'
 using: 'docker'
-image: 'image: 'docker://advancedcsg/action-ccq:latest'
+image: 'docker://advancedcsg/action-ccq:latest'
 branding:
   icon: 'check'
   color: 'green'
